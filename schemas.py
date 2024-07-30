@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 from typing import Optional
+from datetime import date
 
 
 class ContactBase(BaseModel):
@@ -7,7 +8,7 @@ class ContactBase(BaseModel):
     second_name: str
     email: str
     phone: str
-    birthdate: str
+    birthdate: date
     additional_data: Optional[str] = None
 
 
