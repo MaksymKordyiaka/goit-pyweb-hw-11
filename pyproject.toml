@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "goit-pyweb-hw-11"
+version = "0.1.0"
+description = ""
+authors = ["Maksym <maxkord2003@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+sqlalchemy = "^2.0.31"
+alembic = "^1.13.2"
+psycopg2 = "^2.9.9"
+fastapi = "^0.111.1"
+uvicorn = "^0.30.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
