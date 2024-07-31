@@ -43,3 +43,13 @@ def delete_contact(contact_id: int, db: Session = Depends(get_db)):
     if db_contact is None:
         raise HTTPException(status_code=404, detail="Contact not found")
     return db_contact
+
+
+@app.get("/contacts/search/")
+def search_contacts(first_name: str = None, second_name: str = None, email: str = None, db: Session = Depends(get_db)):
+    return crud.search_contacts(db, first_name=first_name, second_name=second_name, email=email)
+
+
+@app.get("/contacts/birthday_next_7_days/", response_model=list[schemas.Contact])
+def get_contacts_birthday_next_7_days(db: Session = Depends(get_db)):
+    return crud.get_upcoming_birthdays(db)
